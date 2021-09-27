@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                    // app = docker.build(DOCKER_IMAGE_NAME)
-                    sh 'docker buid -f Dockerfile -t shivalss/train-schedule'
+                    sh 'docker buid -f Dockerfile -t shivalss/train-schedule .'
                     app.inside {
                         sh 'echo Hello, World!'
                     }
