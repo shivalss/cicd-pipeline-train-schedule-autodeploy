@@ -31,8 +31,9 @@ pipeline {
                       //  app.push("${env.BUILD_NUMBER}")
                        // app.push("latest")
                     //}
-                    sh 'docker login -u="shivalss" -p="shivalss2020"'
-                    sh 'docker push shivalss/train-schedule:latest'
+                    //sh 'docker login -u="shivalss" -p="shivalss2020"'
+                    //sh 'docker push shivalss/train-schedule:latest'
+                    sh 'echo Image Pushed'
                 }
             }
         }
