@@ -21,6 +21,7 @@ pipeline {
                     app.inside {
                         sh 'echo Hello, World!'
                     }
+                    sh 'exit 0'
                 }
             }
         }
