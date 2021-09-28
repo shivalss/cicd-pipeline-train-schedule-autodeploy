@@ -31,6 +31,7 @@ pipeline {
                       //  app.push("${env.BUILD_NUMBER}")
                        // app.push("latest")
                     //}
+                    sh 'docker push shivalss/train-schedule:latest'
                 }
             }
         }
