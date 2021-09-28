@@ -24,17 +24,17 @@ pipeline {
                 }
             }
         }
-        //stage('Push Docker Image') {
-           // steps {
-               // script {
-                   // docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
-                       // app.push("${env.BUILD_NUMBER}")
-                       // app.push("latest")
-                       // sh 'exit 0'
-                 //   }
-              //  }
-           // }
-      //  }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+                        app.push("${env.BUILD_NUMBER}")
+                        app.push("latest")
+                    }
+                    sh 'exit 0'
+                }
+            }
+        }
         stage('CanaryDeploy') {
             environment { 
                 CANARY_REPLICAS = 1
