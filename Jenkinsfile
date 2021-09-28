@@ -28,9 +28,10 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
-                        app.push("${env.BUILD_NUMBER}")
-                        app.push("latest")
+                    //docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+                        //app.push("${env.BUILD_NUMBER}")
+                        //app.push("latest")
+                    sh 'docker push shivalss/train-schedule:latest'
                     }
                     sh 'exit 0'
                 }
