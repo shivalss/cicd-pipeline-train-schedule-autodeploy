@@ -21,7 +21,7 @@ pipeline {
                     app.inside {
                         sh 'echo Hello, World!'
                     }
-                    sh 'exit 0'
+                    
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
                         //app.push("latest")
                     sh 'docker push shivalss/train-schedule:latest'
                     }
-                    sh 'exit 0'
+                    
                 }
             }
         }
