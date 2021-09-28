@@ -14,8 +14,10 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
+                echo 'Running Build Docker Image'
                 script {
                     app = docker.build(DOCKER_IMAGE_NAME)
+                    echo 'Running Build Docker Image - 2'
                     app.inside {
                         sh 'echo Hello, World!'
                     }
