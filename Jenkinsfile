@@ -19,7 +19,7 @@ pipeline {
                     app = docker.build(DOCKER_IMAGE_NAME)
                     echo 'Running Build Docker Image - 2'
                     app.inside {
-                        sh 'echo Hello, World!'
+                    sh 'echo Hello, World!'
                     }
                     
                 }
@@ -27,12 +27,12 @@ pipeline {
         }
         stage('Push Docker Image') {
             steps {
-                //script {
+                script {
                     //docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
                         //app.push("${env.BUILD_NUMBER}")
                         //app.push("latest")
                     sh 'docker push shivalss/train-schedule:latest'
-                    //}
+                  }
                     
                 }
             }
